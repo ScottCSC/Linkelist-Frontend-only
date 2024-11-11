@@ -1,0 +1,77 @@
+/* styles.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #eef2f7;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.linked-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+.node {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    cursor: pointer;
+}
+
+.node:hover {
+    transform: translateY(-5px);
+}
+
+.node .delete-btn {
+    background-color: #dc3545;
+    color: white;
+    font-size: 12px;
+    padding: 2px 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.node .delete-btn:hover {
+    background-color: #b02a37;
+}
+
+.node:after {
+    content: '→';
+    color: #007bff;
+    font-size: 1.5rem;
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.node:last-child:after {
+    content: '';
+}
+
+/* Estilos para el nodo mientras se arrastra */
+.node.dragging {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: grabbing;
+}
